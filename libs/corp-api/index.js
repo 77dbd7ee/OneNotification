@@ -1,3 +1,8 @@
+/**
+ * @providesModule corp-api
+ * Created by 77dbd7ee.
+ */
+
 var API = require('./lib/api_common');
 // 部门管理
 API.mixin(require('./lib/api_department'));

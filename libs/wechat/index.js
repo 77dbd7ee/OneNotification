@@ -1,3 +1,4 @@
+
 var wechat = require('./lib/wechat');
 // 等待回复
 wechat.List = require('./lib/list');

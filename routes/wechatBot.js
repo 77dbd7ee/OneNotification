@@ -1,16 +1,12 @@
 var router = require('express').Router();
 var config = {
-  token: process.env.CORP_ID,
-  corpid: process.env.CORP_TOKEN,
-  encodingAESKey: process.env.CORP_AES_KEY,
-  corpsecret: process.env.CORP_SECRET
+  token: process.env.CORP_ID | '',
+  corpid: process.env.CORP_TOKEN | '',
+  encodingAESKey: process.env.CORP_AES_KEY | '',
+  corpsecret: process.env.CORP_SECRET | ''
 };
 // 引用 wechat 库，详细请查看 https://github.com/node-webot/wechat
-var wechat = require('./wechat');
-
-var WechatAPI = require('wechat-api');
-var api = new WechatAPI(process.env.CORP_ID,
-  process.env.CORP_SECRET);
+var wechat = require('../libs/wechat');
 
 router.use('/', wechat(config).text(function(message, req, res, next) {
     // { ToUserName: 'WWab063e2965934903',
