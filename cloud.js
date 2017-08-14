@@ -7,5 +7,6 @@ AV.Cloud.define('hello', function(request, response) {
 });
 
 AV.Cloud.define('alarm', function(request, response) {
+    console.log('hello,world');
   response.success('Hello world!');
 });

@@ -16,6 +16,7 @@ router.use('/', wechat(config).text(function(message, req, res, next) {
     //    Content: '哈哈哈哈',
     //    MsgId: '931563895',
     //    AgentID: '1000002' }
+    cosole.log(message);
     res.reply('收到',message.Content);
 }).image(function(message, req, res, next) {
   // message为图片内容
