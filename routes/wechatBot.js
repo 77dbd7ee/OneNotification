@@ -1,8 +1,9 @@
 var router = require('express').Router();
 var config = {
-  token: process.env.WECHAT_ID,
-  appid: process.env.WECHAT_TOKEN,
-  encodingAESKey: process.env.WECHAT_AES_KEY,
+  token: process.env.CORP_ID,
+  corpid: process.env.CORP_TOKEN,
+  encodingAESKey: process.env.CORP_AES_KEY,
+  corpsecret: process.env.CORP_SECRET
 };
 // 引用 wechat 库，详细请查看 https://github.com/node-webot/wechat
 var wechat = require('./wechat');
