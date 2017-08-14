@@ -1,5 +1,5 @@
 var router = require('express').Router();
-const config = require('../../config');
+const config = require('../config');
 // 引用 wechat 库，详细请查看 https://github.com/node-webot/wechat
 var wechat = require('./wechat');
 
@@ -26,6 +26,7 @@ router.use('/', wechat(config).text(function(message, req, res, next) {
   // MediaId: 'media_id',
   // MsgId: '5837397301622104395' }}).voice(function(message, req, res, next) {
   // TODO
+  res.reply('收到图片',message.Content);
 }).voice(function(message, req, res, next) {
   // message为音频内容
   // { ToUserName: 'gh_d3e07d51b513',
@@ -66,6 +67,7 @@ router.use('/', wechat(config).text(function(message, req, res, next) {
   // Url: 'http://1024.com/',
   // MsgId: '5837397520665436492' }
   // TODO
+  res.reply('收到位置',message.Content);
 }).link(function(message, req, res, next) {
   // message为链接内容
   // { ToUserName: 'gh_d3e07d51b513',
