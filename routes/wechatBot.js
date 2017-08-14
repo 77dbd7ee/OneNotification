@@ -9,8 +9,8 @@ var config = {
 var wechat = require('./wechat');
 
 var WechatAPI = require('wechat-api');
-var api = new WechatAPI(config.appid,
-  config.token);
+var api = new WechatAPI(process.env.CORP_ID,
+  process.env.CORP_SECRET);
 
 router.use('/', wechat(config).text(function(message, req, res, next) {
     // { ToUserName: 'WWab063e2965934903',
